@@ -26,3 +26,7 @@ class JsonConst {
   static String userinitialJsonFile = 'lib/data/users.json';
   static String userlocalFilename = 'users.json';
 }
+class MessaggeConst{
+    static String notExistsMessage = 'לא קיים משתמש';
+
+}

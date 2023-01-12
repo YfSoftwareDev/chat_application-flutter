@@ -16,7 +16,7 @@ class LoadedUsersState extends UserLoginState {
 }
 
 class CheckForUserState extends UserLoginState {
-  String userConfirms;
+  bool userConfirms;
 
   CheckForUserState({required this.userConfirms});
 

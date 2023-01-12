@@ -11,7 +11,7 @@ part 'user_login_state.dart';
 class UserLoginBloc extends Bloc<UserLoginEvent, UserLoginState> {
     late LoginRepository loginRepository;
 
-  UserLoginBloc() : super(UserLoginInitial()) {
+  UserLoginBloc({required this.loginRepository}) : super(UserLoginInitial()) {
   
     on<AddUserEvent>(_addUser);
     on<CheckForUserEvent>(_checkForUser);
@@ -29,9 +29,9 @@ class UserLoginBloc extends Bloc<UserLoginEvent, UserLoginState> {
     bool checkForUser = await loginRepository.checkForUser(event.user);
     print(checkForUser.toString());
     if (checkForUser) {
-      emit(CheckForUserState(userConfirms: " welcome"));
+      emit(CheckForUserState(userConfirms: true));
     }
-    emit(CheckForUserState(userConfirms: " not exists"));
+    emit(CheckForUserState(userConfirms: false));
   }
 
   }

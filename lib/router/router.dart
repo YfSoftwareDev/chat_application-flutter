@@ -1,3 +1,4 @@
+import 'package:chat_application/presentation/pages/contacts_screen.dart';
 import 'package:chat_application/presentation/pages/home.dart';
 import 'package:flutter/material.dart';
 
@@ -8,13 +9,19 @@ class Router {
     switch (routeSettings.name) {
       case '/':
         return MaterialPageRoute(
-          builder: (context) =>  LoginScreen(),
+         builder: (context) => Home(),
         );
         break;
 
       case '/second':
         return MaterialPageRoute(
-          builder: (context) => Home(),
+           builder: (context) => contactsScreen(),
+        );
+        break;
+
+      case '/third':
+        return MaterialPageRoute(
+           builder: (context) =>  LoginScreen(),
         );
         break;
 
