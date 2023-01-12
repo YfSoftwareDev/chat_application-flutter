@@ -3,7 +3,7 @@ part of 'user_login_bloc.dart';
 @immutable
 abstract class UserLoginState extends Equatable {}
 
-class UserLoginInitial extends UserLoginState {
+class UserLoginInitialState extends UserLoginState {
   List<Object?> get props => throw UnimplementedError();
 }
 
@@ -25,4 +25,16 @@ class CheckForUserState extends UserLoginState {
 
 class LoadingUsers extends UserLoginState {
   List<Object?> get props => [];
+}
+
+class ErrorSubscribeState extends UserLoginState{
+  late String errorSubscribetion;
+  
+  ErrorSubscribeState({
+    required this.errorSubscribetion
+  });
+  @override
+  // TODO: implement props
+  List<Object?> get props => throw UnimplementedError();
+
 }

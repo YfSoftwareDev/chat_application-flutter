@@ -25,18 +25,18 @@ class _UserLoginState extends State<UserLogin> {
       listener: (context, state) {
         if (state is CheckForUserState) {
           if (state.userConfirms) {
-            Navigator.of(context).pushNamed('/second');
+            Navigator.of(context).pushNamed(routerConst.conactsScreen);
           } else {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
               content: Text(MessaggeConst.notExistsMessage),
-              duration: Duration(seconds: 10),
+              duration:const Duration(seconds:3),
             ));
           }
         }
       },
       builder: (context, state) {
         return Container(
-            margin: EdgeInsets.fromLTRB(700, 100, 700, 0),
+            margin:const EdgeInsets.fromLTRB(700, 100, 700, 0),
             child: Column(
               children: <Widget>[
                 Center(
@@ -77,7 +77,7 @@ class _UserLoginState extends State<UserLogin> {
                   padding: const EdgeInsets.fromLTRB(400, 20, 0, 0),
                   child: TextButton(
                       onPressed: () {
-                        Navigator.of(context).pushNamed('/third');
+                        Navigator.of(context).pushNamed(routerConst.loginScreen);
                       },
                       child: Text(
                         ButtonConst.subscribeButton,
@@ -96,6 +96,7 @@ class _UserLoginState extends State<UserLogin> {
                                     color: Color.fromARGB(255, 177, 90, 9))),
                           ))),
                 ),
+                
                 Padding(
                   padding: const EdgeInsets.fromLTRB(
                     0,

@@ -6,10 +6,10 @@ class LoadedUsers extends UserLoginEvent {
   List<Object?> get props => [];
 }
 
-class AddUserEvent extends UserLoginEvent {
+class SubscribeUserEvent extends UserLoginEvent {
   late User user;
-
-  AddUserEvent({required this.user});
+  late String configePassword;
+  SubscribeUserEvent({required this.user ,required this.configePassword});
 
   @override
   List<Object?> get props => [user];
@@ -24,3 +24,4 @@ class CheckForUserEvent extends UserLoginEvent{
   // TODO: implement props
   List<Object?> get props => [user];
 }
+

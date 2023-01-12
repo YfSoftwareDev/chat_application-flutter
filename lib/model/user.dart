@@ -1,3 +1,5 @@
+import '../constants/strings.dart';
+
 class User{
   late String name;
   late String password;
@@ -5,25 +7,36 @@ class User{
   User(this.name ,this.password);
 
   Map<String,dynamic> toJson()=>{
-       'name':name,
-       'password':password,
+       JsonConst.userKeyName:name,
+       JsonConst.userKeypassword:password,
     };
   
 
   factory User.fromJson(Map<String,dynamic> json){
-    return User(json["name"], json['password']);
+    return User(json[JsonConst.userKeyName], json[JsonConst.userKeypassword]);
   }
   
   bool isEmpty(){
-      if( name=="" && password == "")
+      if( name==JsonConst.emptyInputString && password == JsonConst.emptyInputString)
          return true;
      
       else
         return false;
     
   }
+  
+  bool isntFull(){
+      if( name==JsonConst.emptyInputString || password == JsonConst.emptyInputString)
+         return true;
+     
+      else
+        return false;
+    
+  }
+  
+  
   bool isFull(){
-     if(name != "" && password != "")return true;
+     if(name != JsonConst.emptyInputString && password != JsonConst.emptyInputString)return true;
      else return false;
   }
 }
