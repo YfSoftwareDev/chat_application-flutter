@@ -1,7 +1,5 @@
 import 'package:chat_application/logic/user_login_bloc/user_login_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../constants/strings.dart';
@@ -15,9 +13,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-  TextEditingController _passwordConfigController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _passwordConfigController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
         home: Scaffold(
             appBar: AppBar(
               title: Text(TitleConst.loginTitle),
-              backgroundColor: Color.fromARGB(211, 173, 67, 5),
+              backgroundColor: const Color.fromARGB(211, 173, 67, 5),
             ),
             body: BlocConsumer<UserLoginBloc, UserLoginState>(
               listener: (context, state) {},
@@ -35,18 +34,20 @@ class _LoginScreenState extends State<LoginScreen> {
                     if (state is LoadedUsersState) {
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                         content: Text(MessaggeConst.succeededMessage),
-                        duration:const Duration(seconds: 3),
+                        duration: const Duration(seconds: 3),
                       ));
-                    } else if(state is ErrorSubscribeState) {
+                      Navigator.of(context)
+                          .pushNamed(RouterConst.conactsScreen);
+                    } else if (state is ErrorSubscribeState) {
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                         content: Text(state.errorSubscribetion),
-                        duration:const Duration(seconds: 3),
+                        duration: const Duration(seconds: 3),
                       ));
                     }
                   },
                   builder: (context, state) {
                     return Container(
-                        margin: EdgeInsets.fromLTRB(700, 100, 700, 0),
+                        margin: const EdgeInsets.fromLTRB(700, 100, 700, 0),
                         child: Column(
                           children: <Widget>[
                             TextField(
@@ -57,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 filled: true,
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30.0),
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                         width: 5,
                                         color:
                                             Color.fromARGB(255, 173, 67, 5))),
@@ -72,7 +73,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 filled: true,
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30.0),
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       width: 5,
                                       color: Color.fromARGB(255, 168, 68, 10),
                                     )),
@@ -87,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 filled: true,
                                 enabledBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30.0),
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       width: 5,
                                       color: Color.fromARGB(255, 151, 59, 6),
                                     )),
@@ -110,22 +111,22 @@ class _LoginScreenState extends State<LoginScreen> {
                                   child: Text(
                                     ButtonConst.subscribeButton,
                                     style: TextStyle(
-                                        color:
-                                            Color.fromARGB(255, 139, 71, 7)),
+                                        color: Color.fromARGB(255, 139, 71, 7)),
                                   ),
                                   style: ButtonStyle(
                                       backgroundColor:
                                           MaterialStateProperty.all(
-                                              Color.fromARGB(
+                                              const Color.fromARGB(
                                                   255, 253, 253, 253)),
                                       shape: MaterialStateProperty.all<
                                           RoundedRectangleBorder>(
                                         RoundedRectangleBorder(
                                             borderRadius:
                                                 BorderRadius.circular(100.0),
-                                            side: BorderSide(
+                                            side:const BorderSide(
                                                 width: 3,
-                                                color: Color.fromARGB(255, 133, 67, 6))),
+                                                color: Color.fromARGB(
+                                                    255, 133, 67, 6))),
                                       ))),
                             ),
                           ],

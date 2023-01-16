@@ -1,18 +1,25 @@
 
+import 'package:chat_application/constants/strings.dart';
 import 'package:flutter/material.dart';
 
-class contactsScreen extends StatefulWidget {
-  const contactsScreen({super.key});
+class ContactsScreen extends StatefulWidget {
+  const ContactsScreen({super.key});
 
   @override
-  State<contactsScreen> createState() => _contactsScreenState();
+  State<ContactsScreen> createState() => _ContactsScreenState();
 }
 
-class _contactsScreenState extends State<contactsScreen> {
+class _ContactsScreenState extends State<ContactsScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child:Text(" to be contue"),
+    return  Container(
+       decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(ImgConst.loginBackground),
+            fit: BoxFit.cover,
+          ),
+        ),
+      child:const Text(" to be contue"),
     );
   }
 }

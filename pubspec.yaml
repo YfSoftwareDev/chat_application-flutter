@@ -65,7 +65,15 @@ flutter:
   assets:
     - assets/img2.png
     - assets/userRectangle.png
+    - assets/city.jpg
+    - assets/city2.jpg
+    - assets/city3.jpg
+    - assets/gettyimages-1215119911-612x612.jpg
+    - assets/imgForChat.jpg
+    - assets/city5.jpg
+    - assets/cyti4.jpg
     - lib/data/json/users.json
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

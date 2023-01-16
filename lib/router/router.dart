@@ -1,3 +1,4 @@
+import 'package:chat_application/constants/strings.dart';
 import 'package:chat_application/presentation/pages/contacts_screen.dart';
 import 'package:chat_application/presentation/pages/home.dart';
 import 'package:flutter/material.dart';
@@ -7,21 +8,21 @@ import '../presentation/pages/login_screen.dart';
 class Router {
   Route onGenerateRoute(RouteSettings routeSettings) {
     switch (routeSettings.name) {
-      case '/':
+      case RouterConst.homeScreen:
         return MaterialPageRoute(
          builder: (context) => Home(),
         );
         break;
 
-      case '/second':
+      case RouterConst.conactsScreen:
         return MaterialPageRoute(
-           builder: (context) => contactsScreen(),
+           builder: (context) =>const ContactsScreen(),
         );
         break;
 
-      case '/third':
+      case RouterConst.loginScreen:
         return MaterialPageRoute(
-           builder: (context) =>  LoginScreen(),
+           builder: (context) =>const  LoginScreen(),
         );
         break;
 

@@ -16,8 +16,8 @@ class UserLogin extends StatefulWidget {
 }
 
 class _UserLoginState extends State<UserLogin> {
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class _UserLoginState extends State<UserLogin> {
       listener: (context, state) {
         if (state is CheckForUserState) {
           if (state.userConfirms) {
-            Navigator.of(context).pushNamed(routerConst.conactsScreen);
+            Navigator.of(context).pushNamed(RouterConst.conactsScreen);
           } else {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
               content: Text(MessaggeConst.notExistsMessage),
@@ -77,7 +77,7 @@ class _UserLoginState extends State<UserLogin> {
                   padding: const EdgeInsets.fromLTRB(400, 20, 0, 0),
                   child: TextButton(
                       onPressed: () {
-                        Navigator.of(context).pushNamed(routerConst.loginScreen);
+                        Navigator.of(context).pushNamed(RouterConst.loginScreen);
                       },
                       child: Text(
                         ButtonConst.subscribeButton,
@@ -132,5 +132,6 @@ class _UserLoginState extends State<UserLogin> {
             ));
       },
     );
+  
   }
 }
