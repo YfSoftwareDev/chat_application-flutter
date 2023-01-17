@@ -3,19 +3,20 @@ import 'package:flutter/material.dart';
 class ImgConst {
   static const String loginUser = "assets/userRectangle.png";
   static const String loginBackground = "assets/img2.png";
+  static const String contactsBackground = "assets/img3.png";
 }
 
 class GuidingWordsConst {
   static const String enterName = "שם משתמש";
   static const String enterPassword = "הכנס סיסמה";
+  static const String subscribeEnterName="הכנס שם משתמש";
+  static const String subscribeEnterPassword="הכנס סיסמה";
+  static const String subscribeVerifyPassword="אמת סיסמה";
 }
 
 class ButtonConst {
-  static const String enterButton = "כניסה";
+  static const String loginEnterButton = "כניסה";
   static const String subscribeButton = "רישום";
-  static const String loginEnterName="הכנס שם משתמש";
-  static const String loginEnterPassword="הכנס סיסמה";
-  static const String loginVerifyPassword="אמת סיסמה";
 }
 
 class JsonConst {
@@ -28,20 +29,23 @@ class JsonConst {
   static const String emptyInputString = '';
 
 }
-class MessaggeConst{
+class MessageConst{
     static const String notExistsMessage = 'לא קיים משתמש';
-    static const String ExistsUserMessage =  "משתמש זה כבר קיים";
+    static const String existsUserMessage =  "משתמש זה כבר קיים";
     static const String passwordErrorMessage ="סיסמאות לא תואמות אואחד מיהם ריק אנ מילאו הכל ";
     static const String succeededMessage ='רישום עבר בהצלחה';
     static const String emptyTextMessage ="לא הוכנס שם או סיסמה אנא מילאו הכל";
 }
 
 class TitleConst{
-  static const String loginTitle=" עמוד הרשמה";
+  static const String subscribeTitle=" עמוד הרשמה";
 }
 
 class RouterConst{
-  static const String homeScreen="/";
-  static const  String loginScreen="/third";
+  static const String loginScreen="/";
+  static const  String subscribeScreen="/third";
   static const String conactsScreen="/second";
+}
+class TestConst{
+  static const String demoPage="המשך יבוא";
 }

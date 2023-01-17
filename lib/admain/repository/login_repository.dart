@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-import 'package:chat_application/constants/strings.dart';
-import 'package:chat_application/repository/repository.dart';
+import 'package:chat_application/global/constants/strings.dart';
+import 'package:chat_application/admain/repository/repository.dart';
 import '../model/user.dart';
 
 
 
-class LoginRepository {
+class UserRepository {
   late Repository repository = Repository();
   void sendUserToJson(User user) async {
     Map<String, dynamic> recvList;

@@ -72,7 +72,7 @@ flutter:
     - assets/imgForChat.jpg
     - assets/city5.jpg
     - assets/cyti4.jpg
-    - lib/data/json/users.json
+    - assets/json/users.json
     
 
   # An image asset can refer to one or more resolution-specific "variants", see

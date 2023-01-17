@@ -1,12 +1,12 @@
-part of 'user_login_bloc.dart';
+part of 'login_bloc.dart';
 
-abstract class UserLoginEvent {}
+abstract class LoginEvent {}
 
-class LoadedUsers extends UserLoginEvent {
+class LoadedUsersEvent extends LoginEvent {
   List<Object?> get props => [];
 }
 
-class SubscribeUserEvent extends UserLoginEvent {
+class SubscribeUserEvent extends LoginEvent {
   late User user;
   late String configePassword;
   SubscribeUserEvent({required this.user ,required this.configePassword});
@@ -15,7 +15,7 @@ class SubscribeUserEvent extends UserLoginEvent {
   List<Object?> get props => [user];
 }
 
-class CheckForUserEvent extends UserLoginEvent{
+class CheckForUserEvent extends LoginEvent{
    late User user;
 
   CheckForUserEvent({required this.user});
